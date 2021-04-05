@@ -1,0 +1,54 @@
+
+<div class="row max-width">
+	<div class="col-sm-12">
+		<div class="row" >
+			<div class="col-sm-1" >
+				<span>Technology</span>
+			</div>
+			<div class="col-sm-3">
+				<span>{{vacancy.language}}</span>
+			</div>
+		</div>
+		<div class="row" >
+			<div class="col-sm-1" >
+				<span>Comapny</span>
+			</div>
+			<div class="col-sm-3">
+				<span>{{vacancy.company}}</span>
+			</div>
+		</div>
+		<div class="row" >
+			<div class="col-sm-1" >
+				<span>Position</span>
+			</div>
+			<div class="col-sm-3">
+				<span>{{vacancy.position}}</span>
+			</div>
+		</div>
+		<div class="row" >
+			<div class="col-sm-1" >
+				<span>City</span>
+			</div>
+			<div class="col-sm-3">
+				<span>{{vacancy.city}}</span>
+			</div>
+		</div>
+		<div class="row"  >
+			<div class="row" >
+				<p>Info</p>
+				<p>{{vacancy.info}}</p>
+			</div>
+			<div class="row" >
+				<div class="row">
+					<p>Description Of vacancy</p>
+				</div>
+				<div class="row">
+					<div *ngFor="let desc of vacancy.vacancyDetailsDto.details" >
+					<span>{{desc}}</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>

@@ -1,0 +1,12 @@
+.margin-top-form{
+	margin-top: 2%;
+	border-radius: 25px; 
+	width: 150px;
+	border-color: black; 
+}
+.vacancy-item-style{
+	margin-top: 5%;
+	border:solid 1px;
+	border-color: black;
+	border-radius: 25px;
+}

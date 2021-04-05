@@ -1,0 +1,91 @@
+<div class="row">
+	  <div class="col-sm-2">
+		<input class="margin-top-form"  type="text" name="" placeholder="technology" [(ngModel)]="technology">
+		<input class="margin-top-form" type="text" name="" placeholder="city" [(ngModel)]="city">
+		<br>
+		<button class="btn margin-top-form" (click)="search()"> Send</button>
+	</div>
+	  <div class="col-sm-9">
+		  <div class="row">
+			  <div class="row" style="width: 100%">
+				<div style="width: 100%;">
+					<p class="d-flex justify-content-center">vacancy-list</p>
+				</div>
+			</div>
+	      <div class="row" *ngFor="let vac of vacancy | paginate: {itemsPerPage: 20, currentPage: currentPage }" style="width:100%">
+		      <div class="col-sm-12 vacancy-item-style" >
+			<div class="row row-content-margin">
+					<div class="col-sm-2">
+						<div>Technology: <span>{{vac.language}}</span></div>
+					</div>
+					<div class="col-sm-4">
+						<div> Company:<span>{{vac.company}}</span></div>
+					</div>
+
+				</div>
+				<div class="row row-content-margin" >
+					<div class="col-sm-12" >
+						<div class="row" >
+							<div class="col-sm-5">
+								<div>Position:<span>{{vac.position}}</span></div>
+							</div>
+						</div>
+						<div class="row row-content-margin">
+							<div class="col-sm-12">
+								<div class="row">
+									<span>{{vac.info}}</span>
+								</div>
+								<div class="row" >
+									<span><a [routerLink]="['/vacancy', vac.id]" href="#">Show More</a></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+		</div>
+	      </div>
+      </div>
+      <div class="row" style="margin-top: 3%;">
+      	<div class="col-sm-12" >
+      		<ul class="pagination justify-content-center">
+    			<li id ="firstPageID" class="page-item" >
+    				<button class="page-link" href="javascript:void(0);" (click)="firstPageFunk()" (disabled)="firstDis" >
+    					<i class="fas fa-angle-double-left"></i>
+    				</button>
+    			</li>
+    			<li id ="nextPageID" class="page-item">
+    				<button class="page-link" href="javascript:void(0);"  (click)="prevPageFunk()" (disabled) ="nextDss">
+    					<i class="fas fa-angle-left"></i>
+    				</button>
+    			</li>
+    			<li id="prevPageID" class="page-item" >
+    				<button class="page-link" href="javascript:void(0);" (click)="nextPageFunk()" (disabled)="prevDis">
+    					<i class="fas fa-angle-right"></i>
+    				</button>
+    			</li>
+    			<li id="lastPageID" class="page-item" >
+    				<button class="page-link" href="javascript:void(0);" (click)="lastPageFunk()" (disabled)="lastDis">
+    					<i class="fas fa-angle-double-right"></i>
+    				</button>
+    			</li>
+ 			 </ul>
+      	</div>
+      </div>
+
+
+      <!-- <div class="row" >
+        <ul class="nav nav-pills" >
+          <li class="nav-item" >
+			<a class="nav-link"  href="" (click)="setPage(0,$event)">First</a>
+          </li>
+          <li class="nav-item" *ngFor="let p of pages; let i=index">
+            <a class="nav-link"  href="" (click)="setPage(i,$event)">{{i}}</a>
+          </li>
+          <li class="nav-item" >
+		<a class="nav-link"  href="" (click)="setPage(totalPage,$event)">Last</a>
+          </li>
+        </ul>
+      </div> -->
+    </div>
+</div>
+
